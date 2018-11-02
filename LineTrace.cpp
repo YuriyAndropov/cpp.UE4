@@ -30,7 +30,7 @@ FVector UGridManager::HitLocation(FVector StartPoint, FVector EndPoint)
 FString UGridManager::HitPhysicMaterial(FVector StartPoint, FVector EndPoint)
 {
 	FCollisionQueryParams QueryParams;
-	QueryParams.bTraceComplex = true;
+	QueryParams.bTraceComplex = true; // TODO test. Possible bug that will return nothing if it's false
 	QueryParams.bReturnPhysicalMaterial = true;
 	FHitResult Hit;
 	GetWorld()->LineTraceSingleByChannel(
