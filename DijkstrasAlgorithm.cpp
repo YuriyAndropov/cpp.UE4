@@ -1,12 +1,12 @@
 void UPathfinder::DijkstrasAlgorithm()
 {
 	TMap<int32, int32> Frontier; //UE doesn't have a PriorityQueue , so i am using TMap with sorting. Another way to do it is to use heaps.
-	Frontier.Add(GetGridLocations().Find(Location), 10);
+	Frontier.Add(GetGridLocations().Find(Location),0);
 	CameFrom.Add(GetGridLocations().Find(Location), GetGridLocations().Find(Location));
 
 	int32 current;
 	TMap<int32, int32> cost_so_far;
-	cost_so_far.Add(GetGridLocations().Find(Location), 10);
+	cost_so_far.Add(GetGridLocations().Find(Location), 0);
 
 	while (Frontier.Num() != 0)
 	{
